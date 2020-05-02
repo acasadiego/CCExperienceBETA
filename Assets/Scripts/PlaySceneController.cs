@@ -18,9 +18,9 @@ public class PlaySceneController : MonoBehaviour
     
     private int añoActual, greenCoins, nivel, experiencia;
 
-    public Image imgBandera;
+    public Image imgBandera, imgObjeto;
 
-    public Sprite sp_BanderaChina, sp_BanderaUSA, sp_BanderaAlemania, sp_BanderaArabia, sp_BanderaBrasil; 
+    public Sprite sp_BanderaChina, sp_BanderaUSA, sp_BanderaAlemania, sp_BanderaArabia, sp_BanderaBrasil, sp_Prioridad, sp_Concnetracion, sp_Genio; 
 
     bool estadisticasIniciadas;
 
@@ -58,6 +58,8 @@ public class PlaySceneController : MonoBehaviour
             estadisticasIniciadas = true;
             MapaAction();
         }
+
+        ConocerObjetoActivo();
 
     }
 
@@ -271,6 +273,26 @@ public class PlaySceneController : MonoBehaviour
     public int getNivel()
     {
         return nivel;
+    }
+
+    private void ConocerObjetoActivo()
+    {
+        if(TiendaController.tiendaController.getPrioridadActivo())
+        {
+            imgObjeto.sprite = sp_Prioridad;
+        }
+        else if(TiendaController.tiendaController.getConcentracionActivo())
+        {
+            imgObjeto.sprite = sp_Concnetracion;
+        }
+        else if(TiendaController.tiendaController.getGenioActivo())
+        {
+            imgObjeto.sprite = sp_Genio;
+        }
+        else
+        {
+            imgObjeto.sprite = null;
+        }
     }
 
 

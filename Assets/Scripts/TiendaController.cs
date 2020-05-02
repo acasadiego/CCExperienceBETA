@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TiendaController : MonoBehaviour
 {
+    public static TiendaController tiendaController;
     public Button btnComprarPrioridad, btnComprarConcentracion, btnComprarGenio;
     public Text txtNivelPrioridad, txtNivelConcentracion, txtNivelGenio;
 
@@ -17,6 +18,7 @@ public class TiendaController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        tiendaController = this;
         desbloqueadoPriodad = false;
         desbloqueadoConcentracion = false;
         desbloqueadoGenio = false;
@@ -129,6 +131,8 @@ public class TiendaController : MonoBehaviour
                 btnComprarPrioridad.gameObject.SetActive(false);
                 txtInsuficientePrioridad.gameObject.SetActive(true);
             }
+
+    
         }
 
         if(desbloqueadoConcentracion == true)
@@ -158,5 +162,41 @@ public class TiendaController : MonoBehaviour
                 txtInsuficienteGenio.gameObject.SetActive(true);
             }
         }
+
+        txtUsarObjeto1.gameObject.SetActive(false);
+        txtUsarObjeto2.gameObject.SetActive(false);
+        txtUsarObjeto3.gameObject.SetActive(false);
+    }
+
+    public bool getPrioridadActivo()
+    {
+        return prioridadActivo;
+    }
+
+    public bool getConcentracionActivo()
+    {
+        return concentracionActivo;
+    }
+
+    public bool getGenioActivo()
+    {
+        return genioActivo;
+    }
+
+    public void setPrioridadActivo(bool prioridadActivo)
+    {
+        this.prioridadActivo = prioridadActivo;   
+    }
+
+    public void setConcentracionActivo(bool concentracionActivo)
+    {
+        this.concentracionActivo = concentracionActivo;
+    }
+
+    public void setGenioActivo(bool genioActivo)
+    {
+        this.genioActivo = genioActivo;
     }
 }
+
+

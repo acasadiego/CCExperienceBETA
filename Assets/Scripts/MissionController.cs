@@ -560,7 +560,12 @@ public class MissionController : MonoBehaviour
 
         float aleatorio = Random.Range(0f, 100f);
 
-        if(misionSeleccionada.getProbabilidadExito() >= aleatorio)
+        int probabilidadExito = misionSeleccionada.getProbabilidadExito();
+
+        if(TiendaController.tiendaController.getGenioActivo())
+        { probabilidadExito = 100; TiendaController.tiendaController.setGenioActivo(false);}
+
+        if(probabilidadExito >= aleatorio)
         {
             PlaySceneController.playSceneController.añadirExperiencia(3);
             PlaySceneController.playSceneController.GestionarGreenCoins(misionSeleccionada.getRecompensa());
@@ -749,10 +754,79 @@ public class MissionController : MonoBehaviour
             txt_InfoResultado.gameObject.SetActive(false);
         }
 
-        for(int i=0; i<misionSeleccionada.getDuracion();i++)
+        int duracion = misionSeleccionada.getDuracion();
+
+        if(TiendaController.tiendaController.getPrioridadActivo())
         {
-          PlaySceneController.playSceneController.AvanzarAñoAction();
+            duracion = duracion/2;
+            TiendaController.tiendaController.setPrioridadActivo(false);
         }
+
+        if(TiendaController.tiendaController.getConcentracionActivo())
+        {
+            TiendaController.tiendaController.setConcentracionActivo(false);
+
+            if(misionSeleccionada == misionesMostradas[0])
+            {
+                Panel_Mision1.SetActive(false);
+            }
+            else if(misionSeleccionada == misionesMostradas[1])
+            {
+                Panel_Mision2.SetActive(false);
+            }
+            else
+            {
+                Panel_Mision3.SetActive(false);
+            }
+
+            for(int i=0;i<misionesChina.Count;i++)
+            {
+                if(misionSeleccionada == misionesChina[i])
+                {
+                    misionesChina.RemoveAt(i);
+                }
+            }
+
+            for(int i=0;i<misionesEU.Count;i++)
+            {
+                if(misionSeleccionada == misionesEU[i])
+                {
+                    misionesEU.RemoveAt(i);
+                }
+            }
+
+            for(int i=0;i<misionesAlemania.Count;i++)
+            {
+                if(misionSeleccionada == misionesAlemania[i])
+                {
+                    misionesAlemania.RemoveAt(i);
+                }
+            }
+
+            for(int i=0;i<misionesArabia.Count;i++)
+            {
+                if(misionSeleccionada == misionesArabia[i])
+                {
+                    misionesArabia.RemoveAt(i);
+                }
+            }
+
+            for(int i=0;i<misionesBrasil.Count;i++)
+            {
+                if(misionSeleccionada == misionesBrasil[i])
+                {
+                    misionesBrasil.RemoveAt(i);
+                }
+            }
+        }
+        else
+        {
+             for(int i=0; i<duracion;i++)
+             {
+                PlaySceneController.playSceneController.AvanzarAñoAction();
+             }
+        }
+    
 
 
 
