@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\MissionController.cs" />
      <Compile Include="Assets\Scripts\PlayerData.cs" />
      <Compile Include="Assets\Scripts\PlaySceneController.cs" />
+     <Compile Include="Assets\Scripts\TiendaController.cs" />
      <Compile Include="Assets\Scripts\UsernameController.cs" />
      <Compile Include="Assets\Scripts\Window_Graph.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />

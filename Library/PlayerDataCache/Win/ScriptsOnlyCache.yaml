@@ -161,8 +161,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -301,7 +299,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 107c8b787b69bb6520a7f8120eb34fd9
+      Hash: 518320fc6be76d10f647f840a1a581b5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlaySceneController

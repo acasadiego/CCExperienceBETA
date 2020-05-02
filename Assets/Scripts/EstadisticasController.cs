@@ -1146,6 +1146,81 @@ private int indexPais;
         return emisionCo2AntACT;
     }
 
+    public double getVehiculoCombustibleChinaACT()
+    {
+        return vehiculoCombustibleChACT;
+    }
+
+    public double getIndustriaChinaACT()
+    {
+        return industriaChACT;
+    }
+
+    public double getPlasticoQuemadoChinaACT()
+    {
+        return plasticoQuemadoChACT;
+    }
+
+    public double getVehiculoCombustibleUSAACT()
+    {
+        return vehiculoCombustibleUSACT;
+    }
+
+    public double getIndustriaUSAACT()
+    {
+        return industriaUSACT;
+    }
+
+    public double getPlasticoQuemadoUSAACT()
+    {
+        return plasticoQuemadoUSACT;
+    }
+
+    public double getVehiculoCombustibleAlemaniaACT()
+    {
+        return vehiculoCombustibleAlACT;
+    }
+
+    public double getIndustriaAlemaniaACT()
+    {
+        return industriaAlACT;
+    }
+
+    public double getPlasticoQuemadoAlemaniaACT()
+    {
+        return plasticoQuemadoAlACT;
+    }
+
+    public double getVehiculoCombustibleArabiaACT()
+    {
+        return vehiculoCombustibleArACT;
+    }
+
+    public double getIndustriaArabiaACT()
+    {
+        return industriaArACT;
+    }
+
+    public double getPlasticoQuemadoArabiaACT()
+    {
+        return plasticoQuemadoArACT;
+    }
+
+    public double getVehiculoCombustibleBrasilACT()
+    {
+        return vehiculoCombustibleBrACT;
+    }
+
+    public double getIndustriaBrasilACT()
+    {
+        return industriaBrACT;
+    }
+
+    public double getPlasticoQuemadoBrasilACT()
+    {
+        return plasticoQuemadoBrACT;
+    }
+
 
    
 

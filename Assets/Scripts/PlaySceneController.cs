@@ -10,14 +10,17 @@ public class PlaySceneController : MonoBehaviour
     private Scene scene;
 
     public static PlaySceneController playSceneController;
-    public GameObject mapa, estadisticas, tienda, info, panelFinal;
+    public GameObject mapa, estadisticas, tienda, panelInfoPais, panelFinal;
    
-    public TextAsset ChinaTxt, EstadosuTxt, AlemaniaTxt, ArabiasTxt, BrasilTxt;
     private bool isShowingMapa, isShowingEstadisticas, isShowingTienda, isShowingInfo;
 
-    public Text txtUserName, txtAñoActual, txtGreenCoins, txtNivel, txtExperiencia, txtEstado, txtMensajeFinal;
+    public Text txtUserName, txtAñoActual, txtGreenCoins, txtNivel, txtExperiencia, txtEstado, txtMensajeFinal,txtNombrePais, txtDescripcionPais, txtVehiculosPais, txtIndustriaPais, txtQuemaPais;
     
     private int añoActual, greenCoins, nivel, experiencia;
+
+    public Image imgBandera;
+
+    public Sprite sp_BanderaChina, sp_BanderaUSA, sp_BanderaAlemania, sp_BanderaArabia, sp_BanderaBrasil; 
 
     bool estadisticasIniciadas;
 
@@ -104,38 +107,63 @@ public class PlaySceneController : MonoBehaviour
     //Mostrar info de los diferentes paises presentes en el mapa
     public void ChinaAction(){
         isShowingInfo = true;
-        info.GetComponent<UnityEngine.UI.Text>().text = ChinaTxt.text;
-        info.SetActive(isShowingInfo);
+        imgBandera.sprite = sp_BanderaChina;
+        txtNombrePais.text = "CHINA";
+        txtDescripcionPais.text = "La República Popular China es un país ubicado en Asia Oriental. Es caracteristico por ser la primera potencia económica mundial por PIB. Su idioma oficial es el mandarín y es un estado unipartidista gobernado por el Partido Comunista. Su sede de gobierno y capital es Pekín.";
+        txtVehiculosPais.text = ((int)EstadisticasController.estadisticasController.getVehiculoCombustibleChinaACT()).ToString();
+        txtIndustriaPais.text = ((int)EstadisticasController.estadisticasController.getIndustriaChinaACT()).ToString();
+        txtQuemaPais.text = ((int)EstadisticasController.estadisticasController.getPlasticoQuemadoChinaACT()).ToString();
+        panelInfoPais.SetActive(isShowingInfo);
     }
 
     public void EstadosuAction(){
         isShowingInfo = true;
-        info.GetComponent<UnityEngine.UI.Text>().text = EstadosuTxt.text;
-        info.SetActive(isShowingInfo);
+        imgBandera.sprite = sp_BanderaUSA;
+        txtNombrePais.text = "ESTADOS UNIDOS";
+        txtDescripcionPais.text = "Es un país soberano constituido en república federal constitucional compuesta por cincuenta estados y un distrito federal. La mayor parte del país se ubica en el medio de América del Norte. No tiene lengua oficial pero su idioma más hablado es el inglés.";
+        txtVehiculosPais.text = ((int)EstadisticasController.estadisticasController.getVehiculoCombustibleUSAACT()).ToString();
+        txtIndustriaPais.text = ((int)EstadisticasController.estadisticasController.getIndustriaUSAACT()).ToString();
+        txtQuemaPais.text = ((int)EstadisticasController.estadisticasController.getPlasticoQuemadoUSAACT()).ToString();
+        panelInfoPais.SetActive(isShowingInfo);
     }
 
     public void AlemaniaAction(){
         isShowingInfo = true;
-        info.GetComponent<UnityEngine.UI.Text>().text = AlemaniaTxt.text;
-        info.SetActive(isShowingInfo);
+        imgBandera.sprite = sp_BanderaAlemania;
+        txtNombrePais.text = "ALEMANIA";
+        txtDescripcionPais.text = "Es un país soberano centroeuropeo, miembro de la Unión Europea, constituido en Estado social y democrático de derecho y cuya forma de gobierno es la república parlamentaria y federal. Su capital es Berlín. Su lengua oficial es el alemán";
+        txtVehiculosPais.text = ((int)EstadisticasController.estadisticasController.getVehiculoCombustibleAlemaniaACT()).ToString();
+        txtIndustriaPais.text = ((int)EstadisticasController.estadisticasController.getIndustriaAlemaniaACT()).ToString();
+        txtQuemaPais.text = ((int)EstadisticasController.estadisticasController.getPlasticoQuemadoAlemaniaACT()).ToString();
+        panelInfoPais.SetActive(isShowingInfo);
     }
 
     public void ArabiasAction(){
         isShowingInfo = true;
-        info.GetComponent<UnityEngine.UI.Text>().text = ArabiasTxt.text;
-        info.SetActive(isShowingInfo);
+        imgBandera.sprite = sp_BanderaArabia;
+        txtNombrePais.text = "ARABIA SAUDITA";
+        txtDescripcionPais.text = "Es un país de Asia Occidental ubicado en la península arábiga, cuya forma de gobierno es la monarquía absoluta. Su liderazgo en la exportación mundial de petróleo la ha convertido en una de las veinte economías más grandes del planeta.";
+        txtVehiculosPais.text = ((int)EstadisticasController.estadisticasController.getVehiculoCombustibleArabiaACT()).ToString();
+        txtIndustriaPais.text = ((int)EstadisticasController.estadisticasController.getIndustriaArabiaACT()).ToString();
+        txtQuemaPais.text = ((int)EstadisticasController.estadisticasController.getPlasticoQuemadoArabiaACT()).ToString();
+        panelInfoPais.SetActive(isShowingInfo);
     }
 
     public void BrasilAction(){
         isShowingInfo = true;
-        info.GetComponent<UnityEngine.UI.Text>().text = BrasilTxt.text;
-        info.SetActive(isShowingInfo);
+        imgBandera.sprite = sp_BanderaBrasil;
+        txtNombrePais.text = "BRASIL";
+        txtDescripcionPais.text = "Es un país soberano de América del Sur que comprende la mitad oriental del subcontinente y algunos grupos de pequeñas islas en el océano Atlántico. Su idioma oficial es el portugués.";
+        txtVehiculosPais.text = ((int)EstadisticasController.estadisticasController.getVehiculoCombustibleBrasilACT()).ToString();
+        txtIndustriaPais.text = ((int)EstadisticasController.estadisticasController.getIndustriaBrasilACT()).ToString();
+        txtQuemaPais.text = ((int)EstadisticasController.estadisticasController.getPlasticoQuemadoBrasilACT()).ToString();
+        panelInfoPais.SetActive(isShowingInfo);
     }
 
     public void BackAction(){
         ResetearDatosEstadisticas();
         isShowingInfo = false;
-        info.SetActive(isShowingInfo);
+        panelInfoPais.SetActive(isShowingInfo);
     }
 
     public void AvanzarAñoAction() //Avanza un año, independientemente de si el objeto estadisticas este activado o no.
@@ -179,6 +207,7 @@ public class PlaySceneController : MonoBehaviour
     {
         return greenCoins;
     }
+
 
     public void añadirExperiencia(int expGanada)
     {
@@ -237,6 +266,11 @@ public class PlaySceneController : MonoBehaviour
         }
 
         txtEstado.text = "Estado: " + estado;
+    }
+
+    public int getNivel()
+    {
+        return nivel;
     }
 
 
