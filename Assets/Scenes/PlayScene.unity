@@ -2242,7 +2242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.21026471, y: 0.10157433}
   m_AnchorMax: {x: 0.31187496, y: 0.22060212}
-  m_AnchoredPosition: {x: 0, y: -2.2396698}
+  m_AnchoredPosition: {x: 0, y: -2.2396545}
   m_SizeDelta: {x: 7.550003, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &302642669
@@ -2776,7 +2776,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Debes ser nivel 8 para poder comprarlo.
+  m_Text: Debes ser nivel 5 para poder comprarlo.
 --- !u!222 &359563249
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4483,8 +4483,8 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
 --- !u!222 &542019571
@@ -5972,7 +5972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &717008652
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6289,7 +6289,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Debes ser nivel 5 para poder comprarlo.
+  m_Text: Debes ser nivel 3 para poder comprarlo.
 --- !u!222 &753200337
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6678,8 +6678,8 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
 --- !u!222 &786062073
@@ -10077,7 +10077,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 70
+    m_FontSize: 50
     m_FontStyle: 3
     m_BestFit: 0
     m_MinSize: 0
@@ -11291,8 +11291,8 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
 --- !u!222 &1425621117
@@ -14493,7 +14493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.517381, y: 0.017}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.200012, y: -4.349991}
+  m_AnchoredPosition: {x: 4.200012, y: -4.350006}
   m_SizeDelta: {x: 13.800003, y: 9.300003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1865326325

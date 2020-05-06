@@ -1084,6 +1084,11 @@ private int indexPais;
         return emisionCo2BrasilINI;
     }
 
+    public double getCo2AtmosferaACT()
+    {
+        return co2AtmosferaACT;
+    }
+
 
 
     public double getArbolesACT()

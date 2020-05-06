@@ -36,7 +36,7 @@ public class PlaySceneController : MonoBehaviour
         nivel=1;
         experiencia=0;
         timer = 0;
-        greenCoins = 5;
+        greenCoins = 100;
         txtGreenCoins.text = greenCoins.ToString();
         playSceneController = this;
         añoActual = 2020;
@@ -177,7 +177,11 @@ public class PlaySceneController : MonoBehaviour
         txtAñoActual.text = "Año: " + añoActual;
         EstadisticasController.estadisticasController.AvanzarAñoActual();
         MissionController.misionController.GenerarMisiones();
-        GestionarGreenCoins(1);
+        GestionarGreenCoins(2);
+        if(añoActual == 2120)
+        {
+            JuegoTerminado();
+        }
 
     }
 
@@ -238,36 +242,27 @@ public class PlaySceneController : MonoBehaviour
         {
             estado = "EMISIONES DE CO2 DEMASIADO ALTAS";
             txtEstado.color = Color.red;
-        }
-        else if(emisionesCo2 >= 70000000000)
-        {
-            estado = "HA PERDIDO EL JUEGO";
-            txtEstado.color = Color.red;
-            panelFinal.SetActive(true);
-            panelFinal.GetComponent<Image>().color = Color.red;
-            txtMensajeFinal.text = "HAS PERDIDO EL JUEGO. LAS EMISIONES DE CO2 GLOBALES SON DE 70 BILLONES DE TON";
-
+        
         }
         else if(emisionesCo2 < 32000000000 && emisionesCo2>= 31500000000)
         {
             estado = "EMISIONES DE CO2 MODERADAS";
             txtEstado.color = Color.blue;
         }
-        else if(emisionesCo2 < 31500000000 && emisionesCo2>= 31000000000)
+        else if(emisionesCo2 < 31500000000)
         {
             estado = "VAS SALVANDO EL PLANETA";
             txtEstado.color = Color.green;
         }
-        else
-        {
-            estado ="HAS GANADO EL JUEGO";
-            txtEstado.color = Color.green;
-            panelFinal.SetActive(true);
-            panelFinal.GetComponent<Image>().color = Color.magenta;
-            txtMensajeFinal.text = "HAS GANADO EL JUEGO. LAS EMISIONES DE CO2 GLOBALES SON DE 31 BILLONES DE TON ¡Y BAJANDO!";
-        }
+
 
         txtEstado.text = "Estado: " + estado;
+    }
+
+    private void JuegoTerminado()
+    {
+        panelFinal.SetActive(true);
+        txtMensajeFinal.text = "Han pasado 100 años desde que empezaste. El juego ha finalizado. El CO2 en la atmosfera previsto para este año era de 988 PPM. Gracias a tus acciones, lograste reducirlo a " + ((int)EstadisticasController.estadisticasController.getCo2AtmosferaACT()) + " PPM.";
     }
 
     public int getNivel()

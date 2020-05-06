@@ -98,7 +98,7 @@ public class TiendaController : MonoBehaviour
 
         if(desbloqueadoConcentracion == false)
         {
-            if(nivel >= 5)
+            if(nivel >= 3)
             {
                 desbloqueadoConcentracion = true;
                 txtNivelConcentracion.gameObject.SetActive(false);
@@ -107,7 +107,7 @@ public class TiendaController : MonoBehaviour
 
         if(desbloqueadoGenio == false)
         {
-            if(nivel >= 8)
+            if(nivel >= 5)
             {
                 desbloqueadoGenio = true;
                 txtNivelGenio.gameObject.SetActive(false);
